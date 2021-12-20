@@ -1,0 +1,41 @@
+.compliment.ant-radio-button-wrapper-checked {
+  background: #52c41a !important;
+  color: #f6ffed !important;
+  border-color: #b7eb8f !important;
+}
+
+.compliment.ant-radio-button-wrapper-checked::before {
+  background: #b7eb8f !important;
+}
+
+.compliment.ant-radio-button-wrapper:not(.ant-radio-button-wrapper-checked):hover {
+  color: #52c41a !important;
+}
+
+.complaint.ant-radio-button-wrapper-checked {
+  background: #f5222d !important;
+  color: #fff1f0 !important;
+  border-color: #ffa39e !important;
+}
+
+.complaint.ant-radio-button-wrapper-checked::before {
+  background: #ffa39e !important;
+}
+
+.complaint.ant-radio-button-wrapper:not(.ant-radio-button-wrapper-checked):hover {
+  color: #f5222d !important;
+}
+
+.followup.ant-radio-button-wrapper-checked {
+  background: #1890ff !important;
+  color: #e6f7ff !important;
+  border-color: #91d5ff !important;
+}
+
+.followup.ant-radio-button-wrapper-checked::before {
+  background: #91d5ff !important;
+}
+
+.followup.ant-radio-button-wrapper:not(.ant-radio-button-wrapper-checked):hover {
+  color: #1890ff !important;
+}

@@ -1,0 +1,79 @@
+@import "~antd/dist/antd.css";
+
+#components-layout-demo-side .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+body {
+  background-color: white;
+  background-attachment: fixed;
+}
+
+h1 {
+  text-align: center;
+  color: #0e4268;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: arial, helvética;
+}
+
+.subtitle {
+  text-align: left;
+  color: #0e4268;
+  font-size: x-large;
+  font-weight: bold;
+  font-family: arial, helvética;
+}
+
+.FormDefault {
+  margin-top: 2%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: 2px solid #001529;
+}
+
+.TitleFormDefault {
+  background-color: #001529;
+  text-align: center;
+  padding: 1%;
+  padding-bottom: 0%;
+  border-color: #0e4268;
+  color: white;
+}
+
+.TitleDefault {
+  margin-top: 2%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.textDefault {
+  text-align: center;
+  padding: 2%;
+}
+
+.SubTitleDefault {
+  margin-top: 4%;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: bold;
+}
+
+.buttonDefault {
+  background-color: #001529;
+  border-color: #001529;
+  color: white;
+}
+
+.ContenedorDefault {
+  margin: 3%;
+}
+
+.BodyCard {
+  margin-left: 9%;
+  margin-right: 9%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
