@@ -105,7 +105,7 @@ const LoginPage = () => {
 
               <Form.Item>
                 <Link className="login-form-forgot" to={Routes.RECOVERPASSWORD}>
-                  ¡Olvidé mi clave!
+                  ¡Olvidé mi clave! 1
                 </Link>
               </Form.Item>
 
