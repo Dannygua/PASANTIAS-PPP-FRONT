@@ -158,10 +158,13 @@ const StudentList = (props) => {
         <Col>
           <form onSubmit={submitData}>
             <label>Seleccionar un archivo</label>
+            
             <input
+            id="fileSelect"
               key="file"
               name="file"
               type="file"
+              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
               onChange={(e) => handleChange(e.target.files)}
             />
             <button key="submit" type="submit" onClick={submitData}>
