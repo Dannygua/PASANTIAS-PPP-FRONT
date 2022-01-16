@@ -105,8 +105,10 @@ const SubjectForm = (props) => {
       <Form.Item
         name="name"
         label="Nombre"
+        
         rules={[
           { required: true, message: 'Ingresa el nombre de la materia.' },
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
         ]}
       >
         <Input />
@@ -114,8 +116,10 @@ const SubjectForm = (props) => {
       <Form.Item
         name="code"
         label="Codigo"
+        tooltip="ID - Identificador de la materia puede ser numeros y letras"
         rules={[
           { required: true, message: 'Ingresa el codigo de la materia.' },
+          
         ]}
       >
         <Input />
@@ -123,6 +127,8 @@ const SubjectForm = (props) => {
       <Form.Item
         name="level"
         label="Nivel"
+        
+        tooltip="Que tan avanzada es la materia: Basica - Media - Avanzada"
         rules={[
           {
             required: true,
@@ -130,11 +136,12 @@ const SubjectForm = (props) => {
           },
         ]}
       >
-        <Input type="number" />
+        <Input />
       </Form.Item>
       <Form.Item
         name="unit"
         label="Unidad"
+        tooltip="Rama de la malla a la que pertenece"
         rules={[
           { required: true, message: 'Ingresa la unidad de la materia.' },
         ]}
@@ -196,6 +203,7 @@ const SubjectForm = (props) => {
         label="Nombre"
         rules={[
           { required: true, message: 'Ingresa el nombre de la materia.' },
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
         ]}
       >
         <Input />
@@ -203,6 +211,7 @@ const SubjectForm = (props) => {
       <Form.Item
         name="code"
         label="Codigo"
+        tooltip="ID - Identificador de la materia puede ser numeros y letras"
         rules={[
           { required: true, message: 'Ingresa el codigo de la materia.' },
         ]}
@@ -212,6 +221,7 @@ const SubjectForm = (props) => {
       <Form.Item
         name="level"
         label="Nivel"
+        tooltip="Que tan avanzada es la materia: Basica - Media - Avanzada"
         rules={[
           {
             required: true,
@@ -219,11 +229,12 @@ const SubjectForm = (props) => {
           },
         ]}
       >
-        <Input type="number" />
+        <Input />
       </Form.Item>
       <Form.Item
         name="unit"
         label="Unidad"
+        tooltip="Rama de la malla a la que pertenece"
         rules={[
           { required: true, message: 'Ingresa la unidad de la materia.' },
         ]}

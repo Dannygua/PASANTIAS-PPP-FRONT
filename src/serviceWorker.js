@@ -97,10 +97,16 @@ function registerValidSW(swUrl, config) {
       console.error('Error during service worker registration:', error)
     })
 }
+fetch('http://bar.com/data.json', { 
+    mode: 'no-cors' // 'cors' by default
+}).then(function(response) {
+    // Do something with response
+});
 
 function checkValidServiceWorker(swUrl, config) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
+    
     headers: { 'Service-Worker': 'script' },
   })
     .then((response) => {

@@ -38,7 +38,9 @@ const FacultiesForm = (props) => {
         label="Nombre"
         rules={[
           { required: true, message: 'Ingresa el nombre de la facultad.' },
-        ]}
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
+      ]}
+
       >
         <Input />
       </Form.Item>
@@ -56,7 +58,8 @@ const FacultiesForm = (props) => {
         label="Nombre"
         rules={[
           { required: true, message: 'Ingresa el nombre de la facultad.' },
-        ]}
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
+      ]}
       >
         <Input />
       </Form.Item>

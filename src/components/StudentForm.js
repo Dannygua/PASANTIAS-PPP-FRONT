@@ -93,7 +93,7 @@ const StudentForm = (props) => {
           label="Nombre"
           rules={[
               { required: true, message: 'Ingresa su nombre.' },
-              { pattern: /^[a-zA-Z ]+/g, message: 'Ingrese solo letras.' }
+              { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
           ]}
       >
         <Input />
@@ -103,7 +103,7 @@ const StudentForm = (props) => {
           label="Apellido"
           rules={[
               { required: true, message: 'Ingresa su apellido.' },
-              { pattern: /^[a-zA-Z ]+/g, message: 'Ingrese solo letras.' }
+              { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
           ]}
       >
         <Input />
@@ -198,7 +198,7 @@ const StudentForm = (props) => {
           label="Nombre"
           rules={[
               { required: true, message: 'Ingresa su nombre.' },
-              { pattern: /^[a-zA-Z ]+/g, message: 'Ingrese solo letras.' }
+              { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
           ]}
       >
         <Input />
@@ -208,7 +208,7 @@ const StudentForm = (props) => {
           label="Apellido"
           rules={[
               { required: true, message: 'Ingresa su apellido.' },
-              { pattern: /^[a-zA-Z ]+/g, message: 'Ingrese solo letras.' }
+              { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
           ]}
       >
         <Input />

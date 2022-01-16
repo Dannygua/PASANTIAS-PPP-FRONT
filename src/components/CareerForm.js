@@ -77,9 +77,11 @@ const CareerForm = (props) => {
       <Form.Item
         name="name"
         label="Nombres"
+        
         rules={[
-          { required: true, message: 'Ingresa el nombre de la carrera.' },
-        ]}
+          { required: true, message: 'Ingresa el nombre de la carrera' },
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
+      ]}
       >
         <Input />
       </Form.Item>
@@ -89,8 +91,9 @@ const CareerForm = (props) => {
         rules={[
           {
             required: true,
-            message: 'Ingresa el pensum de la carrera.',
-          },
+            
+            message: 'Ingresa el pensum de la carrera.',},
+          {pattern: '^([-]?[1-9][0-9]*|0)$',message: 'Ingrese solo numeros.'},
         ]}
       >
         <Input />
@@ -101,12 +104,13 @@ const CareerForm = (props) => {
         rules={[
           {
             required: true,
-            type: 'number',
             message: 'Ingresa nivel de la carrera.',
+            
           },
+          
         ]}
       >
-        <InputNumber />
+        <Input />
       </Form.Item>
       <Form.Item>
         <Button htmlType="submit" loading={isSubmitting}>
@@ -155,8 +159,9 @@ const CareerForm = (props) => {
         name="name"
         label="Nombre"
         rules={[
-          { required: true, message: 'Ingresa el nombre de la carrera.' },
-        ]}
+          { required: true, message: 'Ingresa el nombre de la carrera' },
+          { pattern: new RegExp(/^[a-zA-Z ]+$/i), message: 'Ingrese solo letras.' }
+      ]}
       >
         <Input />
       </Form.Item>
@@ -166,11 +171,12 @@ const CareerForm = (props) => {
         rules={[
           {
             required: true,
-            message: 'Ingresa el pensum de la carrera.',
-          },
+            
+            message: 'Ingresa el pensum de la carrera.',},
+            {pattern: '^([-]?[1-9][0-9]*|0)$',message: 'Ingrese solo numeros.'},
         ]}
       >
-        <Input type="number" />
+        <Input />
       </Form.Item>
       <Form.Item
         name="levels"
@@ -182,7 +188,7 @@ const CareerForm = (props) => {
           },
         ]}
       >
-        <Input type="number" />
+         <Input />
       </Form.Item>
       <Form.Item>
         <Button class="buttonDefault" htmlType="submit" loading={isSubmitting}>
