@@ -31,10 +31,10 @@ const MainLayout = (props) => {
       <Layout>
         <Header className="header">
           <Row type="flex" justify="space-between" align="bottom">
-            <Col xs={24} md={6} className="logo-wrapper">            
+            <Col >            
               <img className="logo" src={logoEsfot} alt="ESFOT"/>
             </Col>
-            <Col md={14} align="right" className="main-menu">
+            <Col>
               <Navigation mode="horizontal" />
             </Col>
           </Row>

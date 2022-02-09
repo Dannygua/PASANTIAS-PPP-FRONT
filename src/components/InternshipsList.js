@@ -114,20 +114,59 @@ const InternshipsList = () => {
 
   const columns = [
     {
+      title: "id - Nombre - Apellido - Profesion - Carrera - Estado - Acciones",
+      render: (record) => (
+        <React.Fragment>
+          {record.created_at}
+          <br />
+          <br />
+          {record.student}
+          <br />
+          <br />
+          {record.company}
+          <br />
+          <br />
+          {record.tutor}
+          <br />
+          <br />
+          {record.start_date}
+          <br />
+          <br />
+          {record.finish_date}
+          <br />
+          <br />
+          {record.type}
+          <br />
+          <br />
+          <>
+          {handleChangeStatusInterships(record.status)}
+        </>
+          <br />
+          <br /> 
+          
+        </React.Fragment>
+      ),
+      responsive: ["xs"],
+    },
+
+    {
       title: 'Fecha de creación',
       dataIndex: 'created_at',
       key: 'created_at',
+      responsive: ["sm"],
     },
     {
       title: 'Estudiante',
       dataIndex: 'student',
       key: 'student',
+      responsive: ["sm"],
       ...GetColumnSearchProps('student'),
     },
     {
       title: 'Empresa',
       dataIndex: 'company',
       key: 'company',
+      responsive: ["sm"],
       ...GetColumnSearchProps('company'),
     },
     {
@@ -135,6 +174,7 @@ const InternshipsList = () => {
       title: 'Tutor',
       dataIndex: 'tutor',
       key: 'tutor',
+      responsive: ["sm"],
       ...GetColumnSearchProps('tutor'),
       render: (record) => (
         <>
@@ -148,24 +188,28 @@ const InternshipsList = () => {
       title: 'Fecha de inicio',
       dataIndex: 'start_date',
       key: 'start_date',
+      responsive: ["sm"],
       ...GetColumnSearchProps('start_date'),
     },
     {
       title: 'Fecha de fin',
       dataIndex: 'finish_date',
       key: 'finish_date',
+      responsive: ["sm"],
       ...GetColumnSearchProps('finish_date'),
     },
     {
       title: 'Tipo',
       dataIndex: 'type',
       key: 'type',
+      responsive: ["sm"],
       ...GetColumnSearchProps('type'),
     },
     {
       title: 'Estado',
       dataIndex: 'status',
       key: 'status',
+      responsive: ["sm"],
       filters: [
         {
           text: 'Aprobado',

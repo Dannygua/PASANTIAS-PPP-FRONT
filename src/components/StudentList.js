@@ -67,14 +67,60 @@ const StudentList = (props) => {
 
   const columns = [
     {
+      title: "id - Nombre - Apellido - Carrera - Facultad - Estado - Acciones",
+      render: (record) => (
+        <React.Fragment>
+          {record.student_id}
+          <br />
+          <br />
+          {record.student_name}
+          <br />
+          <br />
+          {record.student_lastname}
+          <br />
+          <br />
+          {record.career}
+          <br />
+          <br />
+          {record.faculty}
+          <br />
+          <br />
+          <>
+          {handleChangeStatus(record.student_status)}
+        </>
+          <br />
+          <br /> 
+          <>
+          <Button
+            onClick={() => {
+              DataSet(record, props.form)
+            }}
+            size="middle"
+          >
+            Editar
+          </Button>
+          <Popconfirm
+            title="Desea eliminar el dato?"
+            onConfirm={() => deleteStudent(record)}
+          >
+            <Button size="middle">Eliminar</Button>
+          </Popconfirm>
+        </>
+        </React.Fragment>
+      ),
+      responsive: ["xs"],
+    },
+    {
       id: 'Código',
       dataIndex: 'student_id',
       key: 'student_id',
+      responsive: ["sm"],
     },
     {
       title: 'Nombre',
       dataIndex: 'student_name',
       key: 'student_name',
+      responsive: ["sm"],
       ...GetColumnSearchProps('student_name',
 
       )
@@ -83,6 +129,7 @@ const StudentList = (props) => {
       title: 'Apellido',
       dataIndex: 'student_lastname',
       key: 'student_lastname',
+      responsive: ["sm"],
       ...GetColumnSearchProps(
           'student_lastname'
       )
@@ -91,6 +138,7 @@ const StudentList = (props) => {
       title: 'Carrera',
       dataIndex: 'career',
       key: 'career',
+      responsive: ["sm"],
       ...GetColumnSearchProps(
           'career'
       )
@@ -99,6 +147,7 @@ const StudentList = (props) => {
       title: 'Facultad',
       dataIndex: 'faculty',
       key: 'faculty',
+      responsive: ["sm"],
       ...GetColumnSearchProps(
           'faculty'
       )
@@ -107,6 +156,7 @@ const StudentList = (props) => {
       title: 'Estado',
       dataIndex: 'student_status',
       key: 'student_status',
+      responsive: ["sm"],
       filters: [
         {
           text: 'Activos',
@@ -127,6 +177,7 @@ const StudentList = (props) => {
     {
       title: 'Acción',
       key: 'action',
+      responsive: ["sm"],
       render: (text, record) => (
         <>
           <Button

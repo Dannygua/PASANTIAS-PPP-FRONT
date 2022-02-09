@@ -43,38 +43,88 @@ const TeacherList = (props) => {
   }
   const columns = [
     {
+      title: "id - Nombre - Apellido - Profesion - Carrera - Estado - Acciones",
+      render: (record) => (
+        <React.Fragment>
+          {record.teacher_id}
+          <br />
+          <br />
+          {record.teacher_name}
+          <br />
+          <br />
+          {record.teacher_lastname}
+          <br />
+          <br />
+          {record.degree}
+          <br />
+          <br />
+          {record.career}
+          <br />
+          <br />
+          <>
+          {handleChangeStatus(record.teacher_status)}
+        </>
+          <br />
+          <br /> 
+          <>
+          <Button
+            onClick={() => {
+              DataSet(record, props.form)
+            }}
+            size="middle"
+          >
+            Editar
+          </Button>
+          <Popconfirm
+            title="Desea eliminar el dato?"
+            onConfirm={() => deleteTeacher(record)}
+          >
+            <Button size="middle">Eliminar</Button>
+          </Popconfirm>
+        </>
+        </React.Fragment>
+      ),
+      responsive: ["xs"],
+    },
+    {
       id: 'Código',
       dataIndex: 'teacher_id',
       key: 'teacher_id',
+      responsive: ["sm"],
     },
     {
       title: 'Nombre',
       dataIndex: 'teacher_name',
       key: 'teacher_name',
+      responsive: ["sm"],
       ...GetColumnSearchProps('teacher_name'),
     },
     {
       title: 'Apellido',
       dataIndex: 'teacher_lastname',
       key: 'teacher_lastname',
+      responsive: ["sm"],
       ...GetColumnSearchProps('teacher_lastname'),
     },
     {
       title: 'Profesión',
       dataIndex: 'degree',
       key: 'degree',
+      responsive: ["sm"],
       ...GetColumnSearchProps('degree'),
     },
     {
       title: 'Carrera',
       dataIndex: 'career',
       key: 'career',
+      responsive: ["sm"],
       ...GetColumnSearchProps('career'),
     },
     {
       title: 'Estado',
       dataIndex: 'teacher_status',
       key: 'teacher_status',
+      responsive: ["sm"],
       filters: [
         {
           text: 'Activos',
@@ -95,6 +145,7 @@ const TeacherList = (props) => {
     {
       title: 'Acción',
       key: 'action',
+      responsive: ["sm"],
       render: (text, record) => (
         <>
           <Button

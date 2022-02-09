@@ -42,20 +42,58 @@ const FacultiesList = (props) => {
 
   const columns = [
     {
+      title: "id - Nombre - Estado - Acciones",
+      render: (record) => (
+        <React.Fragment>
+          {record.id}
+          <br />
+          <br />
+          {record.name}
+          <br />
+          <br />
+          <>
+          {handleChangeStatus(record.status)}
+        </>
+          <br />
+          <br /> 
+          <>
+          <Button
+            onClick={() => {
+              DataSet(record, props.form)
+            }}
+            size="middle"
+          >
+            Editar
+          </Button>
+          <Popconfirm
+            title="Desea eliminar el dato?"
+            onConfirm={() => deleteFaculty(record)}
+          >
+            <Button size="middle">Eliminar</Button>
+          </Popconfirm>
+        </>
+        </React.Fragment>
+      ),
+      responsive: ["xs"],
+    },
+    {
       id: 'Código',
       dataIndex: 'id',
       key: 'id',
+      responsive: ["sm"],
     },
     {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      responsive: ["sm"],
       ...GetColumnSearchProps('name'),
     },
     {
       title: 'Estado',
       dataIndex: 'status',
       key: 'status',
+      responsive: ["sm"],
       filters: [
         {
           text: 'Activos',
@@ -77,6 +115,7 @@ const FacultiesList = (props) => {
     {
       title: 'Acción',
       key: 'action',
+      responsive: ["sm"],
       render: (text, record) => (
         <>
           <Button

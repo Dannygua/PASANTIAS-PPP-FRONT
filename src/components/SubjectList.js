@@ -83,38 +83,91 @@ const SubjectList = (props) => {
 
   const columns = [
     {
+      title: "id - Nombre - Codigo - Nivel - Unidad - Carrera - Estado - Acciones",
+      render: (record) => (
+        <React.Fragment>
+          {record.id}
+          <br />
+          <br />
+          {record.name}
+          <br />
+          <br />
+          {record.code}
+          <br />
+          <br />
+          {record.level}
+          <br />
+          <br />
+          {record.unit}
+          <br />
+          <br />
+          {record.career}
+          <br />
+          <br />
+          <>
+          {handleChangeStatus(record.status)}
+        </>
+          <br />
+          <br /> 
+          <>
+          <Button
+            onClick={() => {
+              DataSet(record, props.form)
+            }}
+            size="middle"
+          >
+            Editar
+          </Button>
+          <Popconfirm
+            title="Desea eliminar el dato?"
+            onConfirm={() => deleteSubject(record)}
+          >
+            <Button size="middle">Eliminar</Button>
+          </Popconfirm>
+        </>
+        </React.Fragment>
+      ),
+      responsive: ["xs"],
+    },
+    {
       id: 'Código',
       dataIndex: 'id',
       key: 'id',
+      responsive: ["sm"],
     },
     {
       title: 'NOMBRE',
       dataIndex: 'name',
       key: 'name',
+      responsive: ["sm"],
       ...GetColumnSearchProps('name'),
     },
     {
       title: 'CODIGO',
       dataIndex: 'code',
       key: 'code',
+      responsive: ["sm"],
       ...GetColumnSearchProps('code'),
     },
     {
       title: 'NIVEL',
       dataIndex: 'level',
       key: 'level',
+      responsive: ["sm"],
       ...GetColumnSearchProps('level'),
     },
     {
       title: 'UNIDAD',
       dataIndex: 'unit',
       key: 'unit',
+      responsive: ["sm"],
       ...GetColumnSearchProps('unit'),
     },
     {
       title: 'CARRERA',
       dataIndex: 'career',
       key: 'career',
+      responsive: ["sm"],
       filters: getFilters(),
       onFilter: (value, record) => record.career.indexOf(value) === 0,
     },
@@ -123,6 +176,7 @@ const SubjectList = (props) => {
       title: 'ESTADO',
       dataIndex: 'status',
       key: 'status',
+      responsive: ["sm"],
       filters: [
         {
           text: 'Activos',
@@ -143,6 +197,7 @@ const SubjectList = (props) => {
     {
       title: 'Acción',
       key: 'action',
+      responsive: ["sm"],
       render: (text, record) => (
         <>
           <Button

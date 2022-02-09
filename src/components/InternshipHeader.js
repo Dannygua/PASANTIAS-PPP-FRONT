@@ -78,7 +78,7 @@ const InternshipHeader = (props) => {
   return (
     <>
       <PageHeader title={<Title>Detalles de la práctica</Title>} />
-
+<Row>
       <Descriptions
         title={
           <Divider orientation="center">
@@ -88,9 +88,16 @@ const InternshipHeader = (props) => {
         bordered
         column={2}
       >
+          
+      <Col span={12}>col-12</Col>
+      
+    
         <Descriptions.Item label="Nombre">
+          <Col span={12}>
           {internship.student.name} {internship.student.lastname}
+          </Col>
         </Descriptions.Item>
+        
         <Descriptions.Item label="Carrera">
           {internship.student.career}
         </Descriptions.Item>
@@ -102,7 +109,7 @@ const InternshipHeader = (props) => {
           {internship.student.phone}
         </Descriptions.Item>
       </Descriptions>
-
+</Row>
       <Descriptions
         bordered
         column={2}
